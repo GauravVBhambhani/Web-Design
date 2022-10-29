@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asgnmt 6 Part-B</title>
+
+    <style>
+        .timerBtn {
+            width: 80px;
+            height: 30px;
+            border: 3px solid;
+            border-radius: 12px;
+            background-color: #40c437;
+            color: white;
+            cursor: pointer;
+            font-family: monospace;
+        }
+
+        #display {
+            font-size: 75px;
+            color: orangered;
+            font-family: monospace;
+        }
+
+        .stopwatch {
+            padding: 40px;
+            text-align: center;
+            border: 3px solid;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Gaurav's Stopwatch.</h1>
+    </center>
+    <div class="stopwatch">
+        <div id="display">
+            00:00:00
+        </div>
+        <button id="startBtn" class="timerBtn">Start</button>
+        <button id="pauseBtn" class="timerBtn">Pause</button>
+        <button id="resetBtn" class="timerBtn">Reset</button>
+    </div>
+
+    <script>
+        const display = document.querySelector("#display");
+        const startBtn = document.querySelector("#startBtn");
+        const pauseBtn = document.querySelector("#pauseBtn");
+        const resetBtn = document.querySelector("#resetBtn");
+
+        let startTime = 0;
+        let elapsedTime = 0;
+        let currentTime = 0;
+        let paused = true;
+        let intervalId;
+        let hrs = 0;
+        let mins = 0;
+        let secs = 0;
+
+        startBtn.addEventListener("click", () => {
+            if (paused) {
+                paused = false;
+                startTime = Date.now() - elapsedTime;
+                intervalId = setInterval(updateTime, 75);
+            }
+        });
+
+        pauseBtn.addEventListener("click", () => {
+            if (!paused) {
+                paused = true;
+                elapsedTime = Date.now() - startTime;
+                clearInterval(intervalId);
+            }
+        });
+
+        resetBtn.addEventListener("click", () => {
+            paused = true;
+            clearInterval(intervalId);
+            startTime = 0;
+            elapsedTime = 0;
+            currentTime = 0;
+            hrs = 0;
+            mins = 0;
+            secs = 0;
+            display.textContent = "00:00:00";
+        });
+
+        function updateTime() {
+            elapsedTime = Date.now() - startTime;
+
+            secs = Math.floor((elapsedTime / 1000) % 60);
+            mins = Math.floor((elapsedTime / (1000 * 60)) % 60);
+            hrs = Math.floor((elapsedTime / (1000 * 60 * 60)) % 60);
+
+            secs = pad(secs);
+            mins = pad(mins);
+            hrs = pad(hrs);
+
+            display.textContent = `${hrs}:${mins}:${secs}`;
+
+            function pad(unit) {
+                return (("0") + unit).length > 2 ? unit : "0" + unit;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

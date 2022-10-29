@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asgnmt 6 Part-A</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./validation.js"></script>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #A6E1FA;
+        }
+
+        /* #signup {
+            width:900px;
+            padding:0px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family:helvetica;
+            text-align:center;
+        } */
+
+        form {
+            /* margin-left:300px; */
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #0E6BA8;
+            border-radius: 3px;
+        }
+
+        td {
+            color: white;
+            /* font-weight:bold; */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 200px;
+            height: 35px;
+            border-radius: 3px;
+            padding-left: 5px;
+            border: 1px solid silver;
+        }
+
+        .error_msg {
+            margin: 0px;
+            color: yellow;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        input[type="submit"] {
+            /* background:none; */
+            border: none;
+            background-color: #0A2472;
+            color: white;
+            width: 100px;
+            height: 35px;
+            border-radius: 3px;
+            /* font-size:16px; */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <CENTER>
+            <h1>ASSIGNMENT 6 - PART A</h1>
+        </CENTER>
+    </div>
+    <div class="signup">
+        <form onsubmit="return validate();" action="./calculator.html">
+
+            <table align="center" cellspacing="5" cellpadding="10">
+                <tr>
+                    <td>Username</td>
+                    <td>
+                        <input type="text" id="uname" name="uname" placeholder="Enter username" onblur="validate_uname();">
+                        <br>
+                        <span class="error_msg" id="uname_error"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Email Id</td>
+                    <td>
+                        <input type="text" id="email" placeholder="Enter email" onblur="validate_email();">
+                        <br>
+                        <span class="error_msg" id="email_error"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password" id="pass" placeholder="********" onblur="validate_pass();">
+                        <br>
+                        <span class="error_msg" id="pass_error"></span>
+                    </td>
+                </tr>
+            </table>
+
+            <center><input type="submit" value="Signup" ></center>
+        </form>
+    </div>
+</body>
+
+</html>

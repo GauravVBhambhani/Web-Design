@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        body {
+            background-color: #A6E1FA;
+        }
+
+        #calculator {
+            background-color: #4ba3c3;
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        button {
+            width: 120px;
+            margin: 10px;
+            border-radius: 10px;
+            height: 40px;
+            background-color: #0A2472;
+            color: aliceblue;
+            border: 0px;
+        }
+
+        input {
+            width: 200px;
+            height: 35px;
+            border-radius: 3px;
+            padding-left: 5px;
+            border: 1px solid silver;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <h1>Calculator</h1>
+        <h3>Hello <span id="username"/></h3>
+        <div id="calculator">
+            <table align="center" cellspacing="5" cellpadding="10">
+
+                <tr>
+                    <td>A</td>
+                    <td>
+                        <input type="text" id="a" placeholder="Enter a">
+                        <br>
+                        <span class="error_msg" id="num1_error"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>B</td>
+                    <td>
+                        <input type="text" id="b" placeholder="Enter b">
+                        <br>
+                        <span class="error_msg" id="num2_error"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Answer</td>
+                    <td>
+                        <input type="text" id="res" placeholder="Result" readonly>
+                        <br>
+                        <span class="error_msg" id="pass_error"></span>
+                    </td>
+                </tr>
+
+
+            </table>
+
+            <button id="add">Addition</button>
+            <button id="sub">Subtraction</button>
+
+            <br>
+
+            <button id="mul">Multiplication</button>
+            <button id="div">Division</button>
+
+
+        </div>
+    </center>
+
+    <script>
+
+        window.addEventListener('load', ()=>{
+            const params = (new URL(document.location)).searchParams;
+            const un = params.get('uname');
+
+            document.getElementById('username').innerHTML = un+",";
+        });
+
+        $("#add").click(function () {
+
+            $("#res").val('')
+
+            if (/^\d*[.]?\d*$/.test($("#a").val()) == false) $("#res").val("A is not a valid number!").css({ "color": "red" })
+            else if (/^\d*[.]?\d*$/.test($("#b").val()) == false) $("#res").val("B is not a valid number!").css({ "color": "red" })
+
+            else $("#res").val(calculation(parseFloat($("#a").val()), parseFloat($("#b").val()), 'add')).css({ "color": "black" })
+        });
+
+        $("#sub").click(function () {
+
+            $("#res").val('')
+
+            if (/^\d*[.]?\d*$/.test($("#a").val()) == false) $("#res").val("A is not a valid number!").css({ "color": "red" })
+            else if (/^\d*[.]?\d*$/.test($("#b").val()) == false) $("#res").val("B is not a valid number!").css({ "color": "red" })
+
+            else $("#res").val(calculation(parseFloat($("#a").val()), parseFloat($("#b").val()), 'sub')).css({ "color": "black" })
+        });
+
+        $("#mul").click(function () {
+
+            $("#res").val('')
+
+            if (/^\d*[.]?\d*$/.test($("#a").val()) == false) $("#res").val("A is not a valid number!").css({ "color": "red" })
+            else if (/^\d*[.]?\d*$/.test($("#b").val()) == false) $("#res").val("B is not a valid number!").css({ "color": "red" })
+
+            else $("#res").val(calculation(parseFloat($("#a").val()), parseFloat($("#b").val()), 'mul')).css({ "color": "black" })
+        });
+
+        $("#div").click(function () {
+
+            $("#res").val('')
+
+            if (/^\d*[.]?\d*$/.test($("#a").val()) == false) $("#res").val("A is not a valid number!").css({ "color": "red" })
+            else if (/^\d*[.]?\d*$/.test($("#b").val()) == false) $("#res").val("B is not a valid number!").css({ "color": "red" })
+
+            else $("#res").val(calculation(parseFloat($("#a").val()), parseFloat($("#b").val()), 'div')).css({ "color": "black" })
+        });
+
+        var calculation = (a, b, op) => {
+            if (op == 'add') return a + b;
+            else if (op == 'sub') return a - b;
+            else if (op == 'mul') return a * b;
+            else if (op == 'div') {
+                if (b > 0) return a / b;
+                else if (b == 0) return "Zero Division Error!"
+            }
+        }
+    </script>
+</body>
+
+</html>
