@@ -30,14 +30,11 @@ body {
   clear: both;
 }
 
-
-
 .main-container {
   padding: 30px;
 }
 
 /* CARDS */
-
 .gall-cards {
   display: flex;
   flex-wrap: wrap;
@@ -62,6 +59,7 @@ body {
 }
 
 .card__link,
+.card__exit,
 .card__icon {
   position: relative;
   text-decoration: none;
@@ -100,15 +98,13 @@ body {
 }
 
 /* CARD BACKGROUNDS */
-
 .card-1 {
   background: radial-gradient(#1fe4f5, #3fbafe);
 }
 
 /* RESPONSIVE */
-
 @media (max-width: 1600px) {
   .gall-cards {
     justify-content: center;
   }
-}
+}/*# sourceMappingURL=gallery.css.map */

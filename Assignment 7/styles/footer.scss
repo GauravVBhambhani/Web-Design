@@ -36,7 +36,7 @@
 
 /*use of loop for nth child */
 @for $i from 1 through 6 {
-	.footer a:nth-child(#{$i}) {
+	.footer a:nth-child(#{$i}) { //interpolation
 		font-weight: $fweight;
 	}
 }
