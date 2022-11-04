@@ -45,4 +45,5 @@ Page having 3 sections
 9. SCSS Interpolation
 ---
 Grid - two-dimensional grid-based layout system.
+
 Flexbox - a one-dimensional layout model, that could offer space distribution between items in an interface and powerful alignment capabilities.
