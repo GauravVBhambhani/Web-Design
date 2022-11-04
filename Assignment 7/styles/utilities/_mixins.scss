@@ -1,0 +1,35 @@
+//mixin with parameter for about section
+@mixin border($rradius, $ccolor) {
+  border: $rradius $ccolor;
+}
+
+//mixin in blog.scss and use of if and else
+@mixin avatar($size1, $size2, $img: false) {
+  width: $size1;
+  border-radius: $size2;
+
+  @if ($img) {
+    height: 250px;
+  } @else {
+    height: 520px;
+  }
+}
+
+//Use of mixin for setting up the spacing to block quote in career.scss
+@mixin spacingToBlockQuote {
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+//mixins in home.scss
+@mixin positions {
+  text-align: $alignm;
+  position: absolute;
+}
+//mixin in navbar
+@mixin mainf {
+  overflow-x: hidden;
+  position: static;
+  background-color: #fafafa;
+}

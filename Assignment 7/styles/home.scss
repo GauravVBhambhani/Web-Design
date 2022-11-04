@@ -1,0 +1,25 @@
+/*styling for home page */
+//nesting
+.heading {
+	h2 {
+		@include positions;
+		top: 22%;
+		left: 44%;
+		color: $color;
+	}
+	p {
+		@include positions;
+		top: 28%;
+		left: 36%;
+		color: $color;
+	}
+	.form1 {
+		@include positions;
+		top: 40%;
+		left: 26%;
+		color: black;
+	}
+
+	//use of math operator '+' and variable size
+	padding-left: $size + 50px;
+}

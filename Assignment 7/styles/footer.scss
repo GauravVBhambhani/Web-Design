@@ -1,0 +1,49 @@
+/*footer section styling*/
+
+//use  of nesting
+.footer {
+	img {
+		height: $swidth;
+		width: $swidth;
+	}
+	background-color: #d4dae5;
+	text-decoration: none;
+	border-radius: 2 * $radius + 2; //  (use of a variable and math operation)10px;
+	margin-top: 4 * $size;
+	p {
+		text-align: left;
+		padding: 32px 54px;
+		font-weight: $fweight;
+	}
+	a {
+		padding-left: 75px;
+		padding-right: 40px;
+		color: black;
+		text-decoration: none;
+		&:nth-last-child(-n + 3) {
+			float: right;
+			padding-right: 0px;
+			padding-left: $radius * 3; //12px  use of operator;
+		}
+		&:nth-child(n + 5) {
+			top: 50%;
+			left: 70%;
+			transform: translate(-50%, -50%);
+			margin: 0;
+		}
+	}
+}
+
+/*use of loop for nth child */
+@for $i from 1 through 6 {
+	.footer a:nth-child(#{$i}) {
+		font-weight: $fweight;
+	}
+}
+
+.p {
+	&::selection {
+		color: grey;
+		background: whitesmoke;
+	}
+}

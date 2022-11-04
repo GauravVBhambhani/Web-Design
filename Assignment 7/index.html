@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Travelo</title>
+    <link rel="icon" type="image/x-icon" href="./assets/Group 39708@2x.png">
+</head>
+
+<body>
+
+    <nav id="nav_id">
+        <div class="nav_menu">
+            <ul class="nav-list">
+                <img class="logo_img" src="./assets/Group 39708.png" alt="travelo" />
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#places">Places</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><button type="button" class="btn1" onclick="alert('thank you for visiting')">Connect</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="sea_image">
+            <picture>
+                <source src="./assets/lalo-hernandez-Amo081zdJsI-unsplash@2x.png" media="(min-width:800px)">
+                <img src="./assets/lalo-hernandez-Amo081zdJsI-unsplash.png" alt="explore">
+            </picture>
+
+            <div class="heading">
+                <h2><strong>TRAVEL TO EXPLORE</strong></h2>
+                <article>
+                    <p><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</b> <br>
+                        Iste similique quis eum cupiditate et soluta adipisci enim <br>
+                        maxime accusamus. Deleniti perferendis nulla quaerat alias assumenda!</p>
+                </article>
+
+                <div class="form1">
+                    <form method="get" action="index.html">
+                        <fieldset>
+                            <legend></legend>
+                            <label for="whereyouwanttogo">Where you want to go</label>
+                            <input list="locations" name="locations" required
+                                pattern="[Aa]ustin|[Bb]altimore|[Dd]etroit|[Pp]ortland|[Ss]eattle|[Aa]tlanta|[Bb]oston|[Cc]hicago|[Dd]enver|[Ss]an Francisco|[Ss]san Diego|[Ss]an Jose|[Ll]os Angeles">
+                            <datalist id="locations">
+                                <option value="Austin">
+                                <option value="Baltimore">
+                                <option value="Detroit ">
+                                <option value="Portland">
+                                <option value="Seattle">
+                                <option value="Atlanta">
+                                <option value="Boston">
+                                <option value="Chicago">
+                                <option value="Denver">
+                                <option value="Florida">
+                                <option value="San Diego">
+                                <option value="San Francisco">
+                                <option value="San Jose">
+                                <option value="Los Angeles">
+                                <option value="Philadelphia">
+                            </datalist>
+                            <label for="date">Check-in</label>
+                            <input type="date" name="date1" id="date1" min="2022-09-29" required>
+                            <label for="date">Check-out</label>
+                            <input type="date" name="date2" id="date2" min="2022-09-29" required>
+                            <input type="submit" value="Explore" class="btn2">
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <br>
+
+    <section id="about">
+        <br><br>
+        <center>
+            <h2>Destinations for you!</h2>
+        </center>
+        <main>
+            <section class="cards">
+                <div class="card">
+                    <div class="card__image-container">
+                        <img
+                            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
+                    </div>
+                    <div class="card__content">
+                        <p class="card__title text--medium">
+                            Here's the Title of an Awesome Course
+                        </p>
+                        <div class="card__info">
+                            <p class="text--medium">30 Min</p>
+                            <p class="card__price text--medium">Free</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__image-container">
+                        <img
+                            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
+                    </div>
+                    <div class="card__content">
+                        <p class="card__title text--medium">
+                            Here's the Title of an Awesome Course
+                        </p>
+                        <div class="card__info">
+                            <p class="text--medium">30 Min</p>
+                            <p class="card__price text--medium">Free</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__image-container">
+                        <img
+                            src="https://images.unsplash.com/photo-1473283147055-e39c51463929?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
+                    </div>
+                    <div class="card__content">
+                        <p class="card__title text--medium">
+                            Here's the Title of an Awesome Course
+                        </p>
+                        <div class="card__info">
+                            <p class="text--medium">30 Min</p>
+                            <p class="card__price text--medium">Free</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__image-container">
+                        <img
+                            src="https://images.unsplash.com/photo-1482784160316-6eb046863ece?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
+                    </div>
+                    <div class="card__content">
+                        <p class="card__title text--medium">
+                            Here's the Title of an Awesome Course
+                        </p>
+                        <div class="card__info">
+                            <p class="text--medium">30 Min</p>
+                            <p class="card__price text--medium">Free</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__image-container">
+                        <img
+                            src="https://images.unsplash.com/photo-1470104240373-bc1812eddc9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
+                    </div>
+                    <div class="card__content">
+                        <p class="card__title text--medium">
+                            Here's the Title of an Awesome Course
+                        </p>
+                        <div class="card__info">
+                            <p class="text--medium">30 Min</p>
+                            <p class="card__price text--medium">Free</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </section>
+
+    <section id="blog">
+        <div class="blog">
+            <center><h1><b>Gallery</b></h1></center>
+        </div>
+        <div class="row">
+            <div class="column">
+                <img src="./assets/location images/Mt._Kilimanjaro_12.2006.JPG" style="width:100%">
+                <img src="./assets/location images/london.jpeg" style="width:100%">
+                <img src="./assets/location images/new zealand.webp" style="width:100%">
+                <img src="./assets/location images/singapore-in-pictures-beautiful-places-to-photograph-marina-bay-sands.jpeg" style="width:100%">
+                <img src="./assets/location images/bora bora.jpeg" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="./assets/location images/paris.jpeg" style="width:100%">
+                <img src="./assets/location images/bora bora.jpeg" style="width:100%">
+                <img src="./assets/location images/new zealand.webp" style="width:100%">
+                <img src="./assets/location images/new zealand.webp" style="width:100%">
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <footer>
+            <p>Copyright © Travelo.All rights reserved
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#places">Places</a>
+                <a href="#careers">Careers</a>
+                <a href="#blog">Blog</a>
+                <a href="https://www.linkedin.com/login"><img
+                        src="./assets/location images/5282542_linkedin_network_social network_linkedin logo_icon.png"></a>
+                <a href="https://www.facebook.com/login/"><img src="./assets/location images/facebook.png"></a>
+                <a href="https://www.instagram.com/"><img src="./assets/location images/insta.png"></a>
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

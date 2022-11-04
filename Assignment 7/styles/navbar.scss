@@ -1,0 +1,98 @@
+/*nav bar section styling*/
+
+html {
+	@include mainf; //use of mixin
+}
+body {
+	@include mainf; //use of mixin
+}
+
+//nesting used
+.nav_menu {
+	a {
+		text-decoration: none;
+	}
+
+	// position: fixed; //fixed nav bar
+	top: 0;
+	width: 97%;
+	font-family: "Oswald", sans-serif;
+	background-color: #fafafa;
+}
+
+/*Use of nesting*/
+ul.nav-list {
+	min-width: 696px;
+	list-style: none;
+	padding-top: 5px;
+	li {
+		display: inline !important;
+		padding-left: 75px;
+		a {
+			color: grey;
+			line-height: 3em;
+			padding: 1em 3em;
+			text-decoration: none;
+		}
+	}
+}
+ul {
+	.nav-list {
+		li {
+			&:first-child {
+				float: left;
+			}
+			&:last-child {
+				float: right;
+			}
+		}
+	}
+}
+
+.btn1 {
+	color: $color; //use of a variable
+	background-color: #4169e1;
+	padding: $radius 18px; //use of a variable
+	text-align: $alignm; //use of a variable
+	float: right;
+	margin-right: 10px;
+	border-radius: $size; //use of variable
+	&:hover {
+		background-color: lightblue;
+	}
+}
+.logo_img {
+	float: left;
+	position: relative;
+	margin: 10px 15px 15px 10px;
+}
+.sea_image {
+	img {
+		display: block;
+		width: 95%;
+		height: auto;
+		margin-left: 2 * $size; //40px
+		margin-top: 4 * $size; //80px;
+	}
+}
+.form1 {
+	background-color: #fafafa;
+	opacity: 0.6;
+}
+fieldset {
+	background-color: #fafafa;
+}
+.btn2 {
+	color: $color;
+	background-color: #2e2eff;
+	padding: $radius 18px;
+	text-align: $alignm; //use of variable
+	float: right;
+	margin-right: 10px;
+	border-radius: $size; //use of variable
+}
+@media only screen and (max-width: 480px) {
+	ul.nav-list {
+		display: flex;
+	}
+}

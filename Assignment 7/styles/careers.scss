@@ -1,0 +1,54 @@
+/*careers section styling*/
+
+.rimage {
+	width: $size + $swidth; //use of variable and operator
+	height: $size + $swidth;
+}
+
+.review_section {
+	h1 {
+		text-align: $alignm; //use of variable
+		margin-top: 70px;
+		margin-bottom: 60px;
+		font-family: "Lucida Console", "Courier New", monospace;
+	}
+}
+
+//nesting
+//use of mixin
+blockquote {
+	background: $color; //use of variable
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	quotes: "\201C""\201D""\2018""\2019";
+	&:before {
+		color: #ccc;
+		content: open-quote;
+		font-size: 4em;
+		@include spacingToBlockQuote; //use of mixin
+	}
+	&::after {
+		color: #ccc;
+		content: close-quote;
+		font-size: 4em;
+		@include spacingToBlockQuote; //use of mixin
+	}
+	p {
+		display: inline;
+	}
+}
+.box {
+	height: 300px;
+	float: left;
+	width: 50%;
+	padding: 2 * $size; //40px;
+	background-color: $color; //use of variable
+	border: 2px solid $color; //use of variable
+	box-shadow: 5px 5px #fafafa;
+	margin-left: 10px;
+	margin-right: $size; //use of variable
+	border-radius: 5px;
+}
+p + p {
+	color: #808080;
+}

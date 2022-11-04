@@ -1,0 +1,72 @@
+/*Use of nested selector*/
+
+.first {
+	p {
+		text-align: left;
+	}
+	h1 {
+		text-align: $alignm; //use of variable
+	}
+
+	padding-top: 5px;
+}
+
+.horizontal_image {
+	display: flex; //use of flexbox
+	gap: 2px;
+	justify-content: space-evenly;
+	margin-left: 26px;
+	margin-top: $swidth; //use of variable
+}
+
+/*Use of nesting*/
+
+.vertical_image {
+	flex: 33.33%;
+	padding: 14px;
+	margin-right: 33px;
+	img {
+		border-radius: 10px;
+		height: 300px;
+		width: 100%;
+	}
+	a {
+		text-decoration: none;
+		color: black;
+	}
+}
+
+.three_images {
+	img {
+		height: $swidth; //use of variable
+		width: $swidth; //use of variable
+	}
+	h4 {
+		float: right;
+		margin: 5px;
+	}
+}
+
+.button_option {
+	border: none;
+	padding: 10px 22px;
+	@extend .button_class_1; //use of inheritance
+	text-align: $alignm; //use of variable
+	display: inline-block;
+	font-size: 16px;
+	margin: 10px $size * 4; //use of variable and math operator
+	cursor: pointer;
+	background-color: #fafafa;
+	padding-left: $swidth; //use of variable
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+[class*="block_content"] {
+	box-shadow: 2px $radius #808080; //use of variable
+}
+.button_class_1 {
+	text-decoration: none;
+	color: black;
+}

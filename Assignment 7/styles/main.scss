@@ -1,0 +1,11 @@
+/*main css file importng other css files*/
+@import 'utilities/mixins';
+@import "utilities/variables";
+@import 'navbar';
+@import 'home';
+@import 'about';
+@import 'places';
+@import 'careers';
+@import 'gallery';
+@import 'footer';
+
