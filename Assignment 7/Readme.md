@@ -13,11 +13,9 @@ Page having 3 sections
 
 3. styles/main.css -file contains styling sheets for attributes present in index.html
 
-4. styles/about.scss-File contains scss for about section.
+4. styles/destinations.scss-File contains scss for desitnations section.
 
 5. styles/navbar.scss-File contains scss for navigation bar section.
-
-6. styles/places.scss-File contains scss for places section.
 
 7. styles/home.scss-File contains scss for home section.
 
