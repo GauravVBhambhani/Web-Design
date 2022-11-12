@@ -61,38 +61,45 @@ app.put("/user/edit", async (req, res) => {
     var newName = req.body.name;
     var newPassword = req.body.password;
 
-    // var data = {
-    //     "name": newName,
-    //     "email": email,
-    //     "password": newPassword
-    // }
-
-
     let nameRegExp = /^[a-zA-Z]+ [a-zA-Z]+$/;
     let passwordRegExp = /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
 
     if (!newName.match(nameRegExp)) return res.send("Invalid Name!");
     if (!newPassword.match(passwordRegExp)) return res.send("Please create a Strong Password!");
 
-    const salt = await bcrypt.genSalt(10);
-    var passHash = await bcrypt.hash(newPassword, salt);
-    const options = { upsert: true };
+    // db.collection('details').findOne(femail, async (err) => {
+    //     if (err) return res.send("User does not exist!")
 
-    const filter = { email: femail }
-    const updateDoc = {
-        $set: {
-            name: newName, password: passHash
+
+    // const userEmail = { emailAddress: email }
+
+    const foundUser = await db.collection('details').findOne({ email: femail });
+
+    console.log(foundUser)
+
+    if (foundUser != null) {
+        console.log("Inside if")
+        const salt = await bcrypt.genSalt(10);
+        var passHash = await bcrypt.hash(newPassword, salt);
+        const options = { upsert: true };
+
+        const filter = { email: femail }
+        const updateDoc = {
+            $set: {
+                name: newName, password: passHash
+            }
         }
+
+        db.collection('details').updateOne(filter, updateDoc, options, function (err) {
+            if (err) throw err;
+            console.log("Edited details successfully");
+        });
+        return res.send("Details Edited!");
     }
-
-    db.collection('details').updateOne(filter, updateDoc, options, function (err) {
-        if (err) throw err;
-        console.log("Edited details successfully");
-    });
-    return res.send("Details Edited!");
-
+    else { 
+        console.log("inside else")
+        res.send("email does not exist") }
 });
-
 
 
 
