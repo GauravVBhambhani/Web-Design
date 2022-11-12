@@ -78,7 +78,7 @@ app.put("/user/edit", async (req, res) => {
     console.log(foundUser)
 
     if (foundUser != null) {
-        console.log("Inside if")
+        // console.log("Inside if")
         const salt = await bcrypt.genSalt(10);
         var passHash = await bcrypt.hash(newPassword, salt);
         const options = { upsert: true };
@@ -97,7 +97,7 @@ app.put("/user/edit", async (req, res) => {
         return res.send("Details Edited!");
     }
     else { 
-        console.log("inside else")
+        // console.log("inside else")
         res.send("email does not exist") }
 });
 
