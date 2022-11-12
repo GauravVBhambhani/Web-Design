@@ -2,9 +2,6 @@ var express = require("express");
 var bodyParser = require("body-parser");
 
 const bcrypt = require("bcrypt");
-const saltRounds = 10;
-
-
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/assignmenteight');
@@ -21,7 +18,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 // create user api
-app.post('/user/create', function (req, res) {
+app.post('/user/create', async (req, res) => {
     console.log("Calling Create API...")
     var name = req.body.name;
     var email = req.body.email;
@@ -35,10 +32,19 @@ app.post('/user/create', function (req, res) {
     if (!email.match(emailRegExp)) return res.send("Invalid Email Address!");
     if (!pass.match(passwordRegExp)) return res.send("Please create a Strong Password!");
 
+    try {
+        const salt = await bcrypt.genSalt(10);
+        var passHash = await bcrypt.hash(pass, salt);
+    }
+
+    catch (e) {
+        res.status(500).send(e.toString());
+    }
+
     var data = {
         "name": name,
         "email": email,
-        "password": pass
+        "password": passHash
     }
     db.collection('details').insertOne(data, function (err) {
         if (err) throw err;
@@ -48,7 +54,7 @@ app.post('/user/create', function (req, res) {
 });
 
 // edit user api
-app.put("/user/edit", function (req, res) {
+app.put("/user/edit", async (req, res) => {
     console.log("Calling Edit API...");
 
     var femail = req.body.email;
@@ -61,22 +67,35 @@ app.put("/user/edit", function (req, res) {
     //     "password": newPassword
     // }
 
-    const filter = {email: femail}
-    const options = {upsert: true};
+
+    let nameRegExp = /^[a-zA-Z]+ [a-zA-Z]+$/;
+    let passwordRegExp = /^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/;
+
+    if (!newName.match(nameRegExp)) return res.send("Invalid Name!");
+    if (!newPassword.match(passwordRegExp)) return res.send("Please create a Strong Password!");
+
+    const salt = await bcrypt.genSalt(10);
+    var passHash = await bcrypt.hash(newPassword, salt);
+    const options = { upsert: true };
+
+    const filter = { email: femail }
     const updateDoc = {
         $set: {
-            name: newName, password: newPassword
+            name: newName, password: passHash
         }
     }
 
-    // var newValues = { $set: { name: newName, pass: newPassword } };
-
     db.collection('details').updateOne(filter, updateDoc, options, function (err) {
-            if (err) throw err;
-            console.log("Edited details successfully");
-        });
+        if (err) throw err;
+        console.log("Edited details successfully");
+    });
     return res.send("Details Edited!");
+
 });
+
+
+
+
 
 // delete user api
 app.delete('/user/delete', function (req, res) {
@@ -93,6 +112,10 @@ app.delete('/user/delete', function (req, res) {
     });
     return res.send("User Deleted");
 });
+
+
+
+
 
 // get all users api
 app.get('/user/getAll', function (req, res) {
