@@ -93,7 +93,7 @@ app.put("/user/edit", async (req, res) => {
         db.collection('details').updateOne(filter, updateDoc, options, function (err) {
             if (err) throw err;
             console.log("Edited details successfully");
-        });
+        });     
         return res.send("Details Edited!");
     }
     else { 

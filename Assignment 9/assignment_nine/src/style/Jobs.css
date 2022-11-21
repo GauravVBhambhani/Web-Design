@@ -1,0 +1,14 @@
+.job-cards {
+    padding: 50px;
+    display: flex;
+    overflow: auto;
+}
+
+.post-cards {
+    border-radius: 10px;
+}
+
+.company-cards {
+    border-radius: 10px;
+    text-align: center;
+}

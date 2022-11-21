@@ -1,0 +1,53 @@
+.sign-in-section{
+    /* text-align: center; */
+    justify-content: center;
+    display: flex;
+    padding: 90px 0 90px 0;
+    /* background-color: rgb(252, 252, 252); */
+    font-family: sans-serif;
+}
+
+h3 {
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+}
+
+input{
+    height: 50px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #F3F3F4;
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+.sign-in-button {
+  padding-top: 20px;
+}
+
+button {
+    width: 150px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #D85888;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.forgot-password-link {
+    cursor: pointer;
+    text-align: right;
+    color: rgb(77, 77, 245);
+    padding-top: 10px;
+}
+
+
+
