@@ -22,7 +22,7 @@ B. Libraries used :
 7. nodemon - nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
