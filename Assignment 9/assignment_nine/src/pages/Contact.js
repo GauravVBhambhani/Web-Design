@@ -3,7 +3,7 @@ import '../style/Contact.css';
 
 function Contact(){
 
-    const companies = ['Goldman Sachs', 'Google', 'Microsoft', 'Meta', 'Walmart', 'Amazon', 'Apple']
+    const companies = ['Goldman Sachs', 'Google', 'Microsoft', 'Meta', 'Walmart', 'Amazon', 'Apple', 'hello']
 
     return (
         <div className='list-of-companies'>

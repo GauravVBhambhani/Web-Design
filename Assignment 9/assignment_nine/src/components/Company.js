@@ -17,5 +17,4 @@ class Company extends React.Component {
     }
 }
 
-
 export default Company;

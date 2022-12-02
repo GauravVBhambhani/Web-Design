@@ -51,7 +51,7 @@ import Post from '../components/Post'
 //                 <Company color={this.props.color} companyName={this.props.companyName} />
 //                 <Position  jobPosition={this.props.jobPosition}/>
 //             </div>
-            
+
 //         );
 //     }
 // }
@@ -60,14 +60,15 @@ class Jobs extends React.Component {
     render() {
         return (
             <div className='job-cards'>
-                <Post color="#00A4EF" companyName="Microsoft" jobPosition="Internship - Developer"/>
-                <Post color="#FF6663" companyName="JP Morgan Chase & Co." jobPosition="Internship - Developer"/>
-                <Post color="#FF6663" companyName="Goldman Sachs" jobPosition="Internship - APM"/>
-                <Post color="#FF6663" companyName="Google" jobPosition="Internship - Web Dev"/>
-                <Post color="#FF6663" companyName="Meta" jobPosition="Internship - JAVA Dev"/>
-                <Post color="#FF6663" companyName="Amazon" jobPosition="Internship - Developer"/>
+                <Post color="#00A4EF" companyName="Microsoft" jobPosition="Internship - Developer" />
+                <Post color="#FF6663" companyName="JP Morgan Chase & Co." jobPosition="Internship - Developer" />
+                <Post color="#FF6663" companyName="Goldman Sachs" jobPosition="Internship - APM" />
+                <Post color="#FF6663" companyName="Google" jobPosition="Internship - Web Dev" />
+                <Post color="#FF6663" companyName="Meta" jobPosition="Internship - JAVA Dev" />
+                <Post color="#FF6663" companyName="Amazon" jobPosition="Internship - Developer" />
+                <Post color="#FF6663" companyName="Appleee" jobPosition="Internship - Developer" />
             </div>
-            
+
         );
     }
 }
